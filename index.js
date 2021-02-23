@@ -49,30 +49,6 @@ const stateReducerCopy = (state, action) => {
     switch (action.type) {
         case 'ADD':
             return state + action.item;
-        case 'RESET':
-            return 0;
-        default:
-            return state;
-    }
-}
-
-let numStore = 0;
-
-numStore = stateReducerCopy(numStore, { type: 'ADD', item: 1 });
-numStore = stateReducerCopy(numStore, { type: 'ADD', item: 2 });
-numStore = stateReducerCopy(numStore, { type: 'ADD', item: 3 });
-numStore = stateReducerCopy(numStore, { type: 'ADD', item: 4 });
-
-console.log('numStore is now: ', numStore);
-
-numStore = stateReducerCopy(numStore, { type: 'RESET' });
-
-console.log('numStore, after RESET is: ', numStore);
-
-const stateReducer3 = (state, action) => {
-    switch (action.type) {
-        case 'ADD':
-            return state + action.item;
         case 'DIFF':
             return state - action.item;
         case 'MULT':
@@ -85,3 +61,21 @@ const stateReducer3 = (state, action) => {
             return state;
     }
 }
+
+let numStore = 0;
+
+numStore = stateReducerCopy(numStore, { type: 'ADD', item: 1 });
+numStore = stateReducerCopy(numStore, { type: 'ADD', item: 2 });
+numStore = stateReducerCopy(numStore, { type: 'ADD', item: 3 });
+numStore = stateReducerCopy(numStore, { type: 'ADD', item: 4 }); // numStore is now 10
+
+console.log('numStore is now: ', numStore);
+
+numStore = stateReducerCopy(numStore, { type: 'MULT', item: 5 }); // numStore is now 50
+numStore = stateReducerCopy(numStore, { type: 'PROD', item: 2 }); // numStore is now 25
+
+console.log('numStore is now: ', numStore);
+
+numStore = stateReducerCopy(numStore, { type: 'RESET' });
+
+console.log('numStore, after RESET is: ', numStore);
