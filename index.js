@@ -8,7 +8,6 @@ const letterArray = ['j', 'o', 'h', 'n'];
 
 // the 'accumulator' below holds the updated values (like a counter); the 'item' refers to each item in the original array (just like naming each item in a map method)
 const reducerCallback = (accumulator, item) => {
-    console.log('accumulator, item :', accumulator, item);
     return accumulator + item;
 }
 
@@ -16,5 +15,9 @@ const reducerCallback = (accumulator, item) => {
 const total = numbersArray.reduce(reducerCallback, 0);
 const newString = letterArray.reduce(reducerCallback, '');
 
-console.log("The total is: ", total);
-console.log("The string is : ", newString);
+// console.log("The total is: ", total);
+// console.log("The string is : ", newString);
+
+const stateReducer = (state, action) => {
+    
+}
