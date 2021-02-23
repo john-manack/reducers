@@ -19,5 +19,23 @@ const newString = letterArray.reduce(reducerCallback, '');
 // console.log("The string is : ", newString);
 
 const stateReducer = (state, action) => {
-    
+    switch (action.type) {
+        case 'ADD':
+            return state + action.item;
+        case 'RESET':
+            return '';
+        default:
+            return state;
+    }
 }
+
+let wordStore = '';
+
+// our stateReducer stakes a current state (wordStore), and an action type ('ADD'), and an action item ('r')
+wordStore = stateReducer(wordStore, { type: 'ADD', item: 'r' });
+wordStore = stateReducer(wordStore, { type: 'ADD', item: 'e' });
+wordStore = stateReducer(wordStore, { type: 'ADD', item: 'd' });
+wordStore = stateReducer(wordStore, { type: 'ADD', item: 'u' });
+wordStore = stateReducer(wordStore, { type: 'ADD', item: 'x' });
+
+console.log(wordStore);
