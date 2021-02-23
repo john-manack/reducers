@@ -38,4 +38,4 @@ wordStore = stateReducer(wordStore, { type: 'ADD', item: 'd' });
 wordStore = stateReducer(wordStore, { type: 'ADD', item: 'u' });
 wordStore = stateReducer(wordStore, { type: 'ADD', item: 'x' });
 
-console.log(wordStore);
+console.log('wordStore is now: ', wordStore);
