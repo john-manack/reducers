@@ -73,9 +73,10 @@ console.log('numStore is now: ', numStore);
 
 numStore = stateReducerCopy(numStore, { type: 'MULT', item: 5 }); // numStore is now 50
 numStore = stateReducerCopy(numStore, { type: 'PROD', item: 2 }); // numStore is now 25
+numStore = stateReducerCopy(numStore, { type: 'DIFF', item: 8 }); // numStore is now 17
 
 console.log('numStore is now: ', numStore);
 
-numStore = stateReducerCopy(numStore, { type: 'RESET' });
+numStore = stateReducerCopy(numStore, { type: 'RESET' }); //  numStore is now 0
 
 console.log('numStore, after RESET is: ', numStore);
