@@ -39,3 +39,7 @@ wordStore = stateReducer(wordStore, { type: 'ADD', item: 'u' });
 wordStore = stateReducer(wordStore, { type: 'ADD', item: 'x' });
 
 console.log('wordStore is now: ', wordStore);
+
+wordStore = stateReducer(wordStore, { type: 'RESET' });
+
+console.log('wordStore, after RESET is: ', wordStore);
