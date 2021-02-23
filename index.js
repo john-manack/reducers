@@ -43,3 +43,27 @@ console.log('wordStore is now: ', wordStore);
 wordStore = stateReducer(wordStore, { type: 'RESET' });
 
 console.log('wordStore, after RESET is: ', wordStore);
+
+const stateReducerCopy = (state, action) => {
+    switch (action.type) {
+        case 'ADD':
+            return state + action.item;
+        case 'RESET':
+            return '';
+        default:
+            return state;
+    }
+}
+
+let numStore = 0;
+
+numStore = stateReducerCopy(numStore, { type: 'ADD', item: 1 });
+numStore = stateReducerCopy(numStore, { type: 'ADD', item: 2 });
+numStore = stateReducerCopy(numStore, { type: 'ADD', item: 3 });
+numStore = stateReducerCopy(numStore, { type: 'ADD', item: 4 });
+
+console.log('numStore is now: ', numStore);
+
+numStore = stateReducerCopy(numStore, { type: 'RESET' });
+
+console.log('numStore, after RESET is: ', numStore);
